@@ -11,7 +11,8 @@ Below is the rehostig archictural diagram
 2. Create key Pairs
 
 To login securely into EC2 instance we need create private/public keys.
-Type Key pair in the search bar, enter a name and click on create key pair.
+
+Type ***Key pair*** in the search bar, enter a ***name*** and click on ***create key pair***.
 
 ![aws console](./images/2.png)
 
