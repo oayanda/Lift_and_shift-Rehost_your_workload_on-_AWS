@@ -1,1 +1,1 @@
-# Lift_and_shift-Rehost_your_workload_on-_AWS
+# Lift and shift: Rehost your workload on AWS
