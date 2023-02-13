@@ -4,11 +4,17 @@ Workloads running on physical/virtual machines in a datacenter usually require m
 
 Below is the rehostig archictural diagram
 
-1. Login to AWS Account
+1. Login into AWS Account
 
 ![aws console](./images/1.png)
 
 2. Create key Pairs
+
+To login securely into EC2 instance we need create private/public keys.
+Type Key pair in the search bar, enter a name and click on create key pair.
+
+![aws console](./images/2.png)
+
 3. Create Security groups
 4. Lunch Instances with user data (BASH Script)
 5. Update IP to name mapping in route 53
