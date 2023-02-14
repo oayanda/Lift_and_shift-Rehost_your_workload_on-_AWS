@@ -7,6 +7,15 @@ Below is the rehostig archictural diagram
 1. Login into AWS Account
 
 ![aws console](./images/1.png)
+2. Create a VPC
+Search for VPC and click on ***create vpc***
+
+- Select VPC only
+- Enter a VPC name - ***vprofile-vpc***  or any preferred name.
+- Assign cidr range, ***172.33.0.0/16*** in this case
+- Click create VPC
+
+![aws console](./images/3.png)
 
 2. Create key Pairs
 
@@ -16,12 +25,31 @@ Type ***Key pair*** in the search bar, enter a ***name*** and click on ***create
 
 ![aws console](./images/2.png)
 
-3. Create Security groups
-Load Balancer - Allow inboud rules for HTTP and HTTPS for IPv4 and IPv6
+3. Create Security groups (SG)
 
-Tomcat Instance - 8080 of the application mapped to the LB
+We will create 3major security groups to allow required external and internal communication with the application.
 
-Backend Services
+*Load Balancer SG* - Allow inboud rules for HTTP and HTTPS for IPv4 and IPv6
+
+- Enter the ***name*** and ***description***
+- Select the ***VPC*** you just created
+- Under **Inbound Rules**, click **Add rule**
+- Allow HTTPS & HTTP for Anywhere cidr as seen in the diagram below.
+- Add a Name tag and click ***Create Security group***
+
+![aws console](./images/4.png)
+
+*Tomcat Instance SG* - 8080 of the application mapped to the LB
+
+- Enter the ***name*** and ***description***
+- Select the ***VPC*** you just created
+- Under **Inbound Rules**, click **Add rule**
+- Allow TCP port 8080 of the application to the Load balancer Security group.
+- Add a Name tag and click ***Create Security group***
+
+![aws console](./images/5.png)
+
+*Backend Services* - 
 
 - Mysql mapped to the application security group
 - 1121 for memcacher mapped to the application SG
