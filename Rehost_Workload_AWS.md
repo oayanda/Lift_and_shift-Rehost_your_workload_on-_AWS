@@ -2,7 +2,7 @@
 
 Workloads running on physical/virtual machines in a datacenter usually require multiple teams to manage services and the workloads with is complex especially when you would like to scale up or scale down.
 
-Below is the rehostig archictural diagram
+Below is the rehosting architectural diagram
 
 1. Login into AWS Account
 
@@ -29,7 +29,7 @@ Type ***Key pair*** in the search bar, enter a ***name*** and click on ***create
 
 We will create 3major security groups to allow required external and internal communication with the application.
 
-*Load Balancer SG* - Allow inboud rules for HTTP and HTTPS for IPv4 and IPv6
+*Load Balancer SG* - Allow inbound rules for HTTP and HTTPS for IPv4 and IPv6
 
 - Enter the ***name*** and ***description***
 - Select the ***VPC*** you just created
@@ -49,16 +49,19 @@ We will create 3major security groups to allow required external and internal co
 
 ![aws console](./images/5.png)
 
-*Backend Services* - 
+*Backend Services* -
 
-- Mysql mapped to the application security group
-- 1121 for memcacher mapped to the application SG
+- MySQL mapped to the application security group
+- 1121 for memcached mapped to the application SG
 - 5672 for RabbitMQ mapped to the application SG
-- All traffic mapped to it's self 
+- Allow all backend services communicate with each other.
+
+![aws console](./images/6.png)
 
 4. Lunch Instances with user data (BASH Script)
+
 5. Update IP to name mapping in route 53
-6. Build Apllication from source code
+6. Build Application from source code
 7. Upload to S3 bucket
 8. Download artifact to Tomcat EC2 Instance
 9. Setup ELB with HTTPS (Cert from Amazon Certificate Manager)
