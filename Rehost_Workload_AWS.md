@@ -17,6 +17,17 @@ Type ***Key pair*** in the search bar, enter a ***name*** and click on ***create
 ![aws console](./images/2.png)
 
 3. Create Security groups
+Load Balancer - Allow inboud rules for HTTP and HTTPS for IPv4 and IPv6
+
+Tomcat Instance - 8080 of the application mapped to the LB
+
+Backend Services
+
+- Mysql mapped to the application security group
+- 1121 for memcacher mapped to the application SG
+- 5672 for RabbitMQ mapped to the application SG
+- All traffic mapped to it's self 
+
 4. Lunch Instances with user data (BASH Script)
 5. Update IP to name mapping in route 53
 6. Build Apllication from source code
