@@ -4,10 +4,11 @@ Workloads running on physical/virtual machines in a datacenter usually require m
 
 Below is the rehosting architectural diagram
 
-1. Login into AWS Account
+***1. Login into AWS Account***
 
 ![aws console](./images/1.png)
-2. Create a VPC
+***2. Create a VPC***
+
 Search for VPC and click on ***create vpc***
 
 - Select VPC only
@@ -17,7 +18,7 @@ Search for VPC and click on ***create vpc***
 
 ![aws console](./images/3.png)
 
-2. Create key Pairs
+***3. Create key Pairs***
 
 To login securely into EC2 instance we need create private/public keys.
 
@@ -25,7 +26,7 @@ Type ***Key pair*** in the search bar, enter a ***name*** and click on ***create
 
 ![aws console](./images/2.png)
 
-3. Create Security groups (SG)
+***4. Create Security groups (SG)***
 
 We will create 3major security groups to allow required external and internal communication with the application.
 
@@ -58,7 +59,8 @@ We will create 3major security groups to allow required external and internal co
 
 ![aws console](./images/6.png)
 
-4. Lunch Instances with user data (BASH Script)
+***5. Lunch Instances with user data (BASH Script)***
+
 
 5. Update IP to name mapping in route 53
 6. Build Application from source code
